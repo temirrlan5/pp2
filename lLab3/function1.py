@@ -1,0 +1,129 @@
+#1
+def grams_to_ounces(grams):
+    ounces = 28.3495231 * grams
+    return ounces
+
+#2
+def fahrenheit_to_celsius(fahrenheit):
+    celsius = (5 / 9) * (fahrenheit - 32)
+    return celsius
+
+#3
+def solve(numheads, numlegs):
+    y = (numlegs - 2 * numheads) / 2
+    x = numheads - y
+    return (int(x), int(y))
+
+#4
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def filter_prime(numbers):
+    return [num for num in numbers if is_prime(num)]
+
+
+#5
+from itertools import permutations
+
+def print_permutations(string):
+    perms = permutations(string)
+    
+    for perm in perms:
+        print(''.join(perm))
+
+
+#6
+def reverse(s):
+    sentence = list(map(str, s.split()))
+    sentence.reverse()
+    return sentence
+
+
+#7
+def has_33(nums):
+    for i in range(len(nums) - 1):
+        if nums[i] == 3 and nums[i + 1] == 3:
+            return True
+    return False
+
+#8
+def spy_game(nums):
+    index_0 = False
+    index_1 = False
+
+    for num in nums:
+        if num == 0 and not index_0:
+            index_0 = True
+        elif num == 0 and index_0 and not index_1:
+            index_1 = True
+        elif num == 7 and index_0 and index_1:
+            return True
+    
+    return False
+
+#9
+import math
+
+def sphere_volume(radius):
+    volume = (4 / 3) * math.pi * (radius ** 3)
+    return volume
+
+
+#10
+def unique(a):
+    b = []
+    for x in a:
+        if x not in b:
+            b.append(x)
+    return b
+
+
+#11
+def is_palindrome(s):
+    s1 = s[::-1]
+    return (s == s1)
+
+#12
+def histogram(a):
+    for x in a: print('*' * x)
+
+#13
+import random
+
+def guess_the_number():
+    secret_number = random.randint(1, 20)
+
+    print("Hello! What is your name?")
+    name = input()
+
+    print(f"Well, {name}, I am thinking of a number between 1 and 20.")
+
+    num_guesses = 0
+
+    while True:
+        print("Take a guess.")
+        guess = int(input())
+        num_guesses += 1
+
+        if guess < secret_number:
+            print("Your guess is too low.")
+        elif guess > secret_number:
+            print("Your guess is too high.")
+        else:
+            print(f"Good job, {name}! You guessed my number in {num_guesses} guesses!")
+            break
+
+guess_the_number()
+
+
+
+
+
+
