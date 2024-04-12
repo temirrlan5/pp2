@@ -6,7 +6,7 @@ H = 400
 x = W // 2
 y = H // 2
 sc = pygame.display.set_mode((W, H))
-pygame.display.set_caption("Task3")
+pygame.display.set_caption("task3")
 red = (255, 0, 0)
 white = (255, 255, 255)
 speed = 10

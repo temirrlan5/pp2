@@ -17,12 +17,12 @@ more than just one line
 
 #VARIABLES
 #ex1
-    carname= "Volvo"
+carname= "Volvo"
 #ex2
-    x=50
+x=50
 #ex3
-    x= 5
-    y = 10
+x= 5
+y = 10
     print(x+y)
 #ex4
     x = 5
