@@ -67,7 +67,7 @@ def show_score(color, font, size):
     score_font = pygame.font.SysFont(font,size) 
     level_font = pygame.font.SysFont(font,size) 
     # create the display surface object 
-    score_surface = score_font.render("Score : " + str(SCORE), True , color) # antialias - ÑÐ³Ð»Ð°Ð¶Ð¸Ð²Ð°Ð½Ð¸Ðµ  true 
+    score_surface = score_font.render("Score : " + str(SCORE), True , color) # antialias - true 
     level_surface = level_font.render("Level : " + str(LEVEL), True , color) #string 
     # create a rectangular object for the text 
     score_rect = score_surface.get_rect() 

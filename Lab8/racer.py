@@ -39,18 +39,19 @@ game_over = font.render("Game Over", True, RED)
 text_rect = game_over.get_rect(center=(WIDTH / 2, HEIGHT / 2)) 
  
 # background sound 
-mixer.music.load("media/background2.mp3") 
-mixer.music.play(-1) 
+pygame.mixer.Sound(r"Lab8/media/background2.mp3").play(-1)
+
+
  
 # image 
-coin_image = pygame.image.load('media/coin.png') 
-flowers_image = pygame.image.load('media/pink_flower.png') 
+coin_image = pygame.image.load('Lab8/media/coin.png') 
+flowers_image = pygame.image.load('Lab8/media/pink_flower.png') 
  
  
 class Player(pygame.sprite.Sprite): 
     def __init__(self): 
         super().__init__() 
-        self.image = pygame.image.load('media/car2.png') 
+        self.image = pygame.image.load('Lab8/media/car2.png') 
         self.lives = 3 
         self.hidden = False 
         self.hide_timer = pygame.time.get_ticks() 
@@ -89,7 +90,7 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite): 
     def __init__(self): 
         super().__init__() 
-        self.image = pygame.image.load('media/enemy2.png') 
+        self.image = pygame.image.load('Lab8/media/enemy2.png') 
         self.surface = pygame.Surface((55, 95)) 
         self.rect = self.surface.get_rect(center=(random.randint(180, 400), 0)) 
  
@@ -199,7 +200,7 @@ def drawLives():
     # text = font_small.render(f'Lives:{P1.lives}', True, (255, 255, 255)) 
     pos_x = 20 
     # text = font_small.render('Lives:', True, (79, 81, 78)) 
-    heart_image = pygame.image.load('media/heart.png') 
+    heart_image = pygame.image.load('Lab8/media/heart.png') 
     for i in range(P1.lives): 
         screen.blit(pygame.transform.scale(heart_image, (30, 30)), (pos_x, 25)) 
         pos_x += 30 
@@ -253,7 +254,7 @@ def run():
  
         if P1.lives > 0: 
             if pygame.sprite.spritecollideany(P1, enemies): 
-                pygame.mixer.Sound('media/crash.wav').play() 
+                pygame.mixer.Sound('Lab8/media/crash.wav').play() 
                 time.sleep(0.5) 
                 P1.hide() 
                 E1.after_hide() 
@@ -274,4 +275,5 @@ pygame.display.update()
 pygame.display.flip() 
 clock.tick(60) 
  
-run()
+if __name__ == "__main__":
+    run()

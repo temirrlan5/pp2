@@ -6,7 +6,7 @@ H = 400
 sc = pygame.display.set_mode((W, H))
 clock = pygame.time.Clock()
 
-music_list = ["Lab7/Sakura-Girl-Motivation-chosic.com_.mp3", "Lab7/simple-piano-melody-9834.mp3"]
+music_list = ["Lab7/music/Sakura-Girl-Motivation-chosic.com_.mp3", "Lab7/music/simple-piano-melody-9834.mp3"]
 index = 0
 track = pygame.mixer.Sound(music_list[index])
 
